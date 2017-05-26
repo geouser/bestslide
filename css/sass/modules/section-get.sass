@@ -1,0 +1,110 @@
+.specification
+	font-size: 22px
+	line-height: 30px
+
+	@media ($fullpage) and (max-height: 900px)
+		line-height: 26px
+		font-size: 20px
+
+	@media ($fullpage) and (max-height: 750px)
+		line-height: 24px
+		font-size: 18px
+
+	&:not(:last-child)
+		margin-bottom: 30px
+
+		@media ($fullpage) and (max-height: 900px)
+			margin-bottom: 20px
+
+	p
+		&:not(:last-child)
+			margin-bottom: 15px
+
+			@media ($fullpage) and (max-height: 900px)
+				margin-bottom: 10px
+
+	.format
+		display: block
+		font-size: 48px
+		margin-top: -5px
+		margin-bottom: 8px
+
+		@media ($fullpage) and (max-height: 900px)
+			margin-bottom: 6px
+			font-size: 44px
+
+		@media ($fullpage) and (max-height: 900px)
+			font-size: 40px
+
+.presentation-types
+	font-size: 24px
+	line-height: 39px
+	padding: 20px 0 45px
+
+	@media ($fullpage) and (max-height: 900px)
+		font-size: 22px
+		line-height: 36px
+		padding: 15px 0 30px
+
+	@media ($fullpage) and (max-height: 900px)
+		font-size: 20px
+		line-height: 34px
+
+.tip
+	font-size: 18px
+	line-height: 30px
+	padding-top: 45px
+
+	@media ($fullpage) and (max-height: 900px)
+		font-size: 16px
+		line-height: normal
+		padding-top: 30px
+
+
+.presentation-example
+	display: block
+	height: 270px
+	position: relative
+	color: #fff
+	transition: all 0.3s ease
+
+	@media ($fullpage) and (max-height: 900px)
+		height: 220px
+
+	&:not(:last-child)
+		margin-bottom: 30px
+
+		@media ($fullpage) and (max-height: 900px)
+			margin-bottom: 20px
+
+	.label
+		padding: 0 30px
+		position: absolute
+		width: 100%
+		top: 50%
+		left: 0
+		transform: translateY(-50%)
+		font-weight: bold
+		font-size: 24px
+		text-align: center
+
+		&__desc
+			position: absolute
+			padding-top: 20px
+			top: 100%
+			left: 50%
+			transform: translateX(-50%)
+			font-size: 14px
+			font-weight: 300
+
+	&.blue
+		background-color: $blue
+
+		&:hover
+			background-color: $blue-hover
+
+	&.pink
+		background-color: $pink
+
+		&:hover
+			background-color: $pink-hover
