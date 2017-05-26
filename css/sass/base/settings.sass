@@ -4,10 +4,34 @@ body
 
 body
 	font-family: $g
-	
+	color: $text
+	font-size: 16px
+
+.white
+	color: #fff
+
+.section-title 
+	h2
+		font-size: 52px
+		font-weight: 300
+		color: inherit
+
+		@media ($fullpage) and (max-height: 900px)
+			font-size: 48px
+
+		@media ($fullpage) and (max-height: 750px)
+			font-size: 44px
+
+.fp-section
+	background-size: cover
+	background-repeat: no-repeat
+	background-position: 50% 50%
+
+	@media (max-width: 1199px)
+		padding: 50px 0!important
 
 .wrapper
-	width: 1200px 
+	width: 1145px 
 	padding: 0 15px 
 	margin: 0 auto 
 	text-align: center 
@@ -15,3 +39,12 @@ body
 
 +placeholder
 	opacity: 1
+
+.text-center
+	text-align: center
+
+.text-right
+	text-align: right
+
+.text-left
+	text-align: left

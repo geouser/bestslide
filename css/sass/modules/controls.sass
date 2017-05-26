@@ -1,24 +1,33 @@
 .button 
-	background-color: peru
-	width: 180px
-	height: 60px
-	line-height: 60px
+	background-color: $pink
+	width: auto
+	height: 52px
+	line-height: 52px
 	text-align: center
-	text-transform: uppercase
 	color: #fff
-	font-weight: 500
-	font-size: 16px
+	font-weight: 300
+	font-size: 20px
 	display: inline-block
 	border: none
 	cursor: pointer
+	border-radius: 5px
+	padding: 0 25px
+	transition: all 0.3s ease
+
+	@media ($fullpage) and (max-height: 900px)
+		height: 40px
+		line-height: 40px
+		font-size: 18px
 
 	&:disabled
 		opacity: 0.5
 
-	@media (max-width: 1500px) 
-		width: 160px
-		height: 50px
-		line-height: 50px
+	&:hover
+		background-color: $pink-hover
+
+	&--full
+		width: 100%
+
 
 /* ------------------------------------ */
 /*  SLICK ARROWS  */
