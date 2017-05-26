@@ -19,28 +19,34 @@
        
         <!--=================================================================================================-->
                                                     <!-- HEADER -->
-        <header class="header">
-            <div class="wrapper row middle-xs">
-                
-                <div class="col-md-3">
-                    <a href="index.html" class="logo"><img src="images/logo.png" alt=""></a>
-                </div>
+        <header class="header compensate-for-scrollbar">
+            <div class="wrapper">
+                <div class="inner-wrap">
+                    <div class="header-logo">
+                        <a href="#">bestslide</a>
+                    </div>
 
-                <div class="col-md-6">
-                    <nav class="page-menu"><!-- start navigation -->
-                        <ul>
-                            <li><a href="index.html" class="active">Home</a></li>
-                            <li><a href="about.html">About</a></li>
-                            <li><a href="blog.html">News</a></li>
-                            <li><a href="contacts.html">Contacts</a></li>
+                    <div class="header-menu">
+                        <ul id="menu">
+                            <li class="menu-item" data-menuanchor="portfolio"><a href="#portfolio">Портфолио</a></li>
+                            <li class="menu-item" data-menuanchor="pricing"><a href="#pricing">Цена и сроки</a></li>
+                            <li class="menu-item" data-menuanchor="contacts"><a href="#contacts">Контакты</a></li>
+                            <li class="menu-item">|</li>
+                            <li class="menu-item"><strong><a href="mailto:info@bestslide.ru">info@bestslide.ru</a></strong></li>
                         </ul>
-                    </nav><!-- end nav -->
-                </div>
+                    </div>
 
-                <div class="col-md-3">
-                    <a href="tel:+971 55 915 94 49" class="tel">+971 55 915 94 49</a>
+                    <div class="header-contacts">
+                        <div class="header-contacts__icon">
+                            <img src="images/phone.svg" alt="">
+                        </div>
+                        <div class="header-contacts__content">
+                            <p class="phone"><strong><a href="tel:8 800 505 02 78 ">8 800 505 02 78 </a></strong></p>
+                            <small>Звонок по России бесплатный </small>
+                            <p class="mobil-phone"><a href="tel:7 (499) 213 03 08">7 (499) 213 03 08</a></p>
+                        </div>
+                    </div>
                 </div>
-
             </div><!-- end wrapper -->
         </header><!-- end header -->
         
@@ -54,6 +60,86 @@
         <!--=================================================================================================-->
                                                     <!-- OFFER SECTION -->
         <div class="fullpage" id="fullpage">
+
+
+            <section class="fp-section main-section white" style="background-image: url(images/main-bg.jpg);">
+                <div class="wrapper">
+                    <h1 class="site-title">Разрабатываем профессиональные презентации <span>для бизнеса, выступлений, рассылок и печати</span></h1>
+
+                    <div class="main-features">
+                        <div class="row start-xs between-xs">
+                            <div class="col-xs-4">
+                                <div class="feature">
+                                    <div class="feature__icon">
+                                        <img src="images/feature-1.svg" alt="">
+                                    </div>
+                                    <div class="feature__content">
+                                        <p class="title">Оперативно</p>
+                                        <p class="content">срок 5-10 дней</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-4">
+                                <div class="feature">
+                                    <div class="feature__icon">
+                                        <img src="images/feature-2.png" alt="">
+                                    </div>
+                                    <div class="feature__content">
+                                        <p class="title">Эффективно</p>
+                                        <p class="content">конверсия до 20%</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-3">
+                                <div class="feature">
+                                    <div class="feature__icon">
+                                        <img src="images/feature-3.svg" alt="">
+                                    </div>
+                                    <div class="feature__content">
+                                        <p class="title">Выгодно</p>
+                                        <p class="content">цена ниже средне-рыночной на 30%</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> <!-- end main-features -->
+
+                    <div class="main-screen-form">
+                        <form action="" class="ajax-from">
+                            <div class="form-title">
+                                <p>Оставьте заявку и мы свяжемся с Вами в ближайшее время</p>
+                            </div>
+                            <div class="form-body">
+                                <div class="row between-xs">
+                                    <div class="form-group">
+                                        <input type="text" name="name" placeholder="Имя" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" name="phone" placeholder="Телефон" required>
+                                    </div>
+                                    <div class="form-group button-group">
+                                        <button class="button button--full">Отправить</button>
+                                    </div>    
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+                <button class="scroll-down"><img src="images/scroll-down.svg" alt=""></button>
+            </section>
+
+
+            <section class="fp-section citate-section white" style="background-color: #EA1D63;">
+                <div class="wrapper">
+                    <blockquote>
+                        <p>«Есть три ответа на результат дизайна – да, нет и НИЧЕГО СЕБЕ! «Ничего себе» – это то, к чему надо стремиться».</p>
+                        <footer>
+                            <cite>Милтон Глэзер</cite>
+                        </footer>
+                    </blockquote>
+                </div>
+            </section>
 
 
             <section class="fp-section portfolio-section white"  style="background-image: url(images/portfolio-bg.jpg);">
@@ -133,7 +219,7 @@
                             </div>
                             
                             <div class="row">
-                                <div class="col-xs-5">
+                                <div class="col-xs-6 col-sm-5">
                                     <div class="specification">
                                         <p class="title">Формат документа</p>
                                         <p><strong><span class="format">pdf</span>+ ppt / adobe illustrator</strong></p>
@@ -143,7 +229,7 @@
                                         <p><strong><span class="format">a4</span>(или любой другой)</strong></p>
                                     </div>
                                 </div>
-                                <div class="col-xs-7">
+                                <div class="col-xs-6 col-sm-7">
                                     <div class="specification">
                                         <p class="title">Наполнение</p>
                                         <p><strong>Качественные графика и фото из платных источников</strong></p>
@@ -159,12 +245,14 @@
 
                         </div>
                         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-5">
-                            <a href="#" class="presentation-example blue">
-                                <span class="label">Пример электронной презентации <span class="label__desc">Кликните для просмотра</span></span>
-                            </a>
-                            <a href="#" class="presentation-example pink">
-                                <span class="label">Пример напечатанной презентации <span class="label__desc">Кликните для просмотра</span></span>
-                            </a>
+                            <div class="row">
+                                <a href="#" class="presentation-example blue">
+                                    <span class="label">Пример электронной презентации <span class="label__desc">Кликните для просмотра</span></span>
+                                </a>
+                                <a href="#" class="presentation-example pink">
+                                    <span class="label">Пример напечатанной презентации <span class="label__desc">Кликните для просмотра</span></span>
+                                </a>    
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -199,7 +287,7 @@
                                     <p>Дизайн + Верстка слайдов</p>
                                 </div>
                                 <div class="price-item__button">
-                                    <button class="button button--full">Узнать цену</button>
+                                    <button href="#modal-popup" class="button button--full fancybox">Узнать цену</button>
                                 </div>
                             </div> <!-- end price-item -->
 
@@ -218,7 +306,7 @@
                                     <p>Структура + Тексты + Дизайн + Верстка слайдов</p>
                                 </div>
                                 <div class="price-item__button">
-                                    <button class="button button--full">Узнать цену</button>
+                                    <button href="#modal-popup" class="button button--full fancybox">Узнать цену</button>
                                 </div>
                             </div> <!-- end price-item -->
                         </div> <!-- end pricing -->
@@ -231,16 +319,16 @@
             <section class="fp-section action-section white" style="background-image: url(images/action-bg.jpg);">
                 <div class="wrapper">
                     <div class="row end-xs">
-                        <div class="col-xs-12 col-sm-12 col-md-9 col-lg-7">
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-7">
                             <div class="action-info">
                                 <p class="slogan">Акция!</p>
                                 <div class="section-title">
-                                    <h2>Все клиентам – визитка в подарок!</h2>
+                                    <h2>Всем клиентам – визитка в подарок!</h2>
                                 </div>
                                 <div class="action-text">
                                     <p>Заказавшим презентацию до конца июня -  оригинальный дизайн визитки в подарок!</p>
                                 </div>
-                                <button class="button">Подробнее</button>
+                                <button href="#modal-popup" class="button fancybox">Подробнее</button>
                             </div>
                         </div>
                     </div>
@@ -281,7 +369,7 @@
 
                 <div class="wrapper">
                     <div class="row end-xs">
-                        <div class="xol-xs-12 col-sm-12 col-md-9 col-lg-6">
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
                             <div class="packages-info">
                                 <div class="section-title">
                                     <h2>Пакетом – выгодней</h2>
@@ -296,7 +384,7 @@
                                 </div>
 
                                 <div class="offers">
-                                    <div class="row">
+                                    <div class="row center-xs">
                                         <div class="col-xs-6">
                                             <div class="offer-item">
                                                 <p class="title">Современный дизайн</p>
@@ -321,8 +409,8 @@
                                                 <p>Landing page и презентация в едином стиле</p>
                                             </div>
                                         </div>
-                                        <div class="col-xs-12 col-sm-8">
-                                            <button class="button button--full">Заказать Landing page</button>
+                                        <div class="col-xs-8 col-sm-6 col-md-6 col-lg-8">
+                                            <button href="#modal-popup" class="button button--full fancybox">Заказать Landing page</button>
                                         </div>
                                     </div>
                                 </div>
@@ -392,7 +480,24 @@
 
   	    <!-- //////////////////////////////////////////////////////////////////////// -->
 
-        <div id="modal-popup" class="fncb-hide zoom-anim-dialog popup"></div>
+        <div id="modal-popup" class="fncb-hide zoom-anim-dialog popup">
+            <form action="#" class="form ajax-form">
+                <div class="form-title">
+                    <p>Оставьте заявку, мы свяжемся с Вами</p>
+                </div>
+                <div class="form-body">
+                    <div class="form-group">
+                        <input type="text" name="name" placeholder="Имя" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="phone" placeholder="Телефон" required>
+                    </div>
+                    <div class="form-group button-group">
+                        <button class="button button--full">Отправить</button>
+                    </div>
+                </div>
+            </form>
+        </div>
 
         <div id="modal-popup-ok" class="fncb-hide zoom-anim-dialog popup result">
             <p class="heading">Спасибо!</p>

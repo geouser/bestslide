@@ -7,8 +7,14 @@
 		font-size: 22px
 		padding: 15px 0 40px
 
-	@media ($fullpage) and (max-height: 750px)
+	@media ($fullpage) and (max-height: 750px), (max-width: 767px)
 		padding: 15px 0 35px
+
+	@media (max-width: 991px)
+		font-size: 22px
+
+	@media (max-width: 767px)
+		font-size: 20px
 
 
 
@@ -27,8 +33,21 @@
 	@media ($fullpage) and (max-height: 900px)
 		padding: 80px 45px 120px
 
-	@media ($fullpage) and (max-height: 750px)
+	@media ($fullpage) and (max-height: 750px), (max-width: 767px)
 		padding: 70px 30px 90px
+
+	@media (max-width: 991px)
+		width: -webkit-calc(50% - 30px)
+		width: calc(50% - 30px)
+		margin: 0 15px
+
+	@media (max-width: 767px)
+		width: 390px
+		max-width: 100%
+		
+		&:not(:last-child)
+			margin-bottom: 15px
+
 
 	&:before
 		content: ''
@@ -41,7 +60,7 @@
 		top: 0
 		left: 0
 
-		@media ($fullpage) and (max-height: 750px)
+		@media ($fullpage) and (max-height: 750px), (max-width: 767px)
 			border-width: 150px 175px 0 0
 
 	&__counter
@@ -50,7 +69,7 @@
 		left: 25px
 		text-align: left
 
-		@media ($fullpage) and (max-height: 750px)
+		@media ($fullpage) and (max-height: 750px), (max-width: 767px)
 			top: 15px
 			left: 15px
 
@@ -59,7 +78,7 @@
 			font-weight: bold
 			letter-spacing: -0.03em
 
-			@media ($fullpage) and (max-height: 750px)
+			@media ($fullpage) and (max-height: 750px), (max-width: 767px)
 				font-size: 22px
 
 	&__button
@@ -69,21 +88,22 @@
 		right: 0
 		padding: 45px
 
-		@media ($fullpage) and (max-height: 750px)
+		@media ($fullpage) and (max-height: 750px), (max-width: 767px)
 			padding: 30px
+
 
 	&__title
 		font-size: 24px
 		font-weight: bold
 
-		@media ($fullpage) and (max-height: 750px)
+		@media ($fullpage) and (max-height: 750px), (max-width: 767px)
 			font-size: 22px
 
 	&__icon
 		margin-bottom: 24px
 		height: 110px
 
-		@media ($fullpage) and (max-height: 750px)
+		@media ($fullpage) and (max-height: 750px), (max-width: 767px)
 			height: 90px
 			margin-bottom: 20px
 
@@ -98,6 +118,6 @@
 		font-weight: 300
 		padding-top: 14px
 
-		@media ($fullpage) and (max-height: 750px)
+		@media ($fullpage) and (max-height: 750px), (max-width: 767px)
 			font-size: 16px
 			line-height: normal

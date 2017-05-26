@@ -34,9 +34,12 @@ jQuery(document).ready(function($) {
         paddingTop: '0',
         paddingBottom: '0',
         fixedElements: '.header',
+        anchors: ['main-screen', 'moto', 'portfolio', 'what-you-get', 'pricing', 'action', 'clients', 'packages', 'contacts'],
         responsiveWidth: 1200,
         sectionSelector: '.fp-section',
         slideSelector: '.fp-slide',
+        navigation: true,
+        navigationPosition: 'right',
     });
 
 

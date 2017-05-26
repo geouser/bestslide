@@ -13,11 +13,29 @@
 		width: 80%
 		padding-top: 35px
 
+	@media (max-width: 1199px)
+		padding-top: 50px
+
+	@media (max-width: 767px)
+		margin-bottom: -10px
+		.row
+			margin: 0 -5px
+
+		[class*='col-']
+			padding: 0 5px
+
+	@media (max-width: 480px)
+		[class*='col-']
+			+col-width(50%)
+
 .portfolio-item
 	display: block
 	width: 100%
 	position: relative
 	margin-bottom: 30px
+
+	@media (max-width: 767px)
+		margin-bottom: 10px
 
 	img
 		display: block
@@ -38,8 +56,15 @@
 		opacity: 0
 		visibility: hidden
 
-		@media ($fullpage) and (max-height: 750px)
+		@media ($fullpage) and (max-height: 750px), (max-width: 991px)
 			font-size: 16px
+
+		@media (max-width: 1199px)
+			opacity: 1
+			visibility: visible
+
+		@media (max-width: 767px)
+			font-size: 14px
 
 	&:before
 		content: ''
@@ -55,7 +80,13 @@
 		opacity: 0
 		visibility: 0
 
-	&:hover .label,
-	&:hover:before
-		opacity: 1
-		visibility: visible
+		@media (max-width: 1199px)
+			visibility: visible
+			opacity: 1
+			background-color: rgba(0, 5, 59, 0.6)
+	
+	@media ($fullpage)
+		&:hover .label,
+		&:hover:before
+			opacity: 1
+			visibility: visible

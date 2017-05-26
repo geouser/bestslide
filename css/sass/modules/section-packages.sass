@@ -5,10 +5,18 @@
 		top: 50%
 		transform: translateY(-50%)
 		max-height: 75%
+		max-width: 60%
+		z-index: -1
+
+		@media (max-width: 1199px)
+			opacity: 0.1
 
 .packages-info
 	font-weight: 300
 	text-align: left
+
+	@media (max-width: 1199px)
+		text-align: center
 
 .packages-subtitle
 	font-size: 24px
@@ -17,6 +25,12 @@
 	@media ($fullpage) and (max-height: 900px)
 		padding: 15px 0
 
+	@media (max-width: 991px)
+		font-size: 22px
+
+	@media (max-width: 767px)
+		font-size: 18px
+
 .packages-offer
 	font-weight: bold
 	font-size: 30px
@@ -24,6 +38,12 @@
 
 	@media ($fullpage) and (max-height: 900px)
 		margin-bottom: 15px
+
+	@media (max-width: 991px)
+		font-size: 26px
+
+	@media (max-width: 767px)
+		font-size: 24px
 
 	h3
 		font-size: inherit
@@ -34,6 +54,14 @@
 	@media ($fullpage) and (max-height: 900px)
 		margin-bottom: 20px
 
+	@media (max-width: 991px)
+		font-size: 14px
+
 	.title
 		font-weight: bold
 		font-size: 22px
+
+		@media (max-width: 1199px)
+			font-size: 20px
+		@media (max-width: 767px)
+			font-size: 18px

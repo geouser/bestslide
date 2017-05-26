@@ -1,39 +1,103 @@
 .header
-	+position(absolute, 0, 0, auto, 0)
-	+transition(all, .4s)
-	
-	height: 80px
-	color: #FFF
-	background: rgba(0,0,0,.2)
-	
-	.wrapper
-		height: 100%
+	position: fixed
+	top: 0
+	left: 0
+	width: 100%
+	z-index: 100
+	color: #fff
+	padding: 55px 0
+	transition: all 0.7s ease
 
-		& > div:first-of-type
-			text-align: left
+	.inner-wrap
+		padding: 0 260px
+		position: relative
 
-		& > div:last-of-type 
-			text-align: right
+	&-logo
+		position: absolute
+		top: 50%
+		left: 0
+		transform: translateY(-50%)
 
-/* ------------------------------------ */
-/*  NAV STYLES  */
+		a
+			font-size: 40px
+			font-weight: 700
+			color: #fff
 
-.page-menu
-	ul
-		list-style-type: none
+	&-menu
+		margin: 0 -20px
 
-		li
-			display: inline-block
-			vertical-align: middle
-			margin: 0 10px
+		ul
+			list-style-type: none
+			+flex($j: center)
 
-			a
-				color: #fff
-				text-transform: uppercase
+			li
+				display: inline-block
+				vertical-align: middle
+				margin: 0 20px
+
+				a
+					color: #fff
+					border-bottom: 2px solid transparent
+					transition: all 0.3s ease
+
+					&:hover
+						border-bottom-color: #fff
+
+				&.active
+					a
+						border-bottom-color: #fff
+
+	&-contacts
+		position: absolute
+		top: 50%
+		right: 0
+		transform: translateY(-15px)
+		+flex($ai: flex-start)
+		text-align: left
+		font-weight: 300
+		transition: all 0.7s ease
+
+		&__icon
+			padding-right: 10px
+		
+		.phone
+			font-size: 22px
+
+		small
+			display: block
+			font-size: 12px
+			margin-top: -4px
+			margin-bottom: 12px
+			transition: all 0.7s ease
+
+		.mobile-phone
+			font-size: 14px
+
+body:not(.fp-viewing-main-screen)
+	.header
+		padding: 25px 0
+		background-color: rgba(0, 5, 59, 0.6)
+
+		&-contacts
+			transform: translateY(-50%)
+
+			small
+				margin-bottom: 0
+
+@media (max-width: 1199px)
+	.header
+		padding: 25px 0
+		background-color: rgba(0, 5, 59, 0.6)
+
+		&-contacts
+			transform: translateY(-50%)
+
+			small
+				margin-bottom: 0
+
 
 /* ------------------------------------ */
 /*  MENU BUTTON  */
-
 .menu-button
 	+position(fixed, 15px, 10px, auto, auto)
 	background: white
@@ -49,3 +113,4 @@
 	-o-transition: .5s ease-in-out
 	transition: .5s ease-in-out
 	cursor: pointer
+	display: none
