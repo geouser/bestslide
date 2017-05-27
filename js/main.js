@@ -87,8 +87,8 @@ function currentSlideTransition() {
 function goTo(el) {
     var $nextSlide = $('.background').eq(el - 1);
 
-    $nextSlide.prevAll('.background').css('transform', 'translate3d(0,-100vh,0)').find('.content-wrapper').css('transform', 'translateY(30vh)');
-    $nextSlide.nextAll('.background').css('transform', 'translate3d(0,30vh,0)').find('.content-wrapper').css('transform', 'translateY(-15vh)');
+    $nextSlide.prevAll('.background').css('transform', 'translate3d(0,-100vh,0)').find('.content-wrapper').css('transform', 'translateY(-15vh)');
+    $nextSlide.nextAll('.background').css('transform', 'translate3d(0,30vh,0)').find('.content-wrapper').css('transform', 'translateY(30vh)');
 
     $nextSlide.css('transform', 'translate3d(0,0vh,0)').find('.content-wrapper').css('transform', 'translateY(0vh)');
     currentSlideNumber = el - 1;
@@ -107,6 +107,16 @@ jQuery(document).ready(function($) {
 
     $('.slide-nav li').click(function(){
          goTo($(this).index() + 1);
+    });
+
+    $('.scroll-down').click(function(){
+         goTo(2);
+    });
+
+    $('.header-menu a').click(function(event){
+        event.preventDefault();
+        var target = $ ($(this).attr('href')).index() + 1;
+         goTo(target);
     });
 
     /*---------------------------
@@ -153,9 +163,9 @@ jQuery(document).ready(function($) {
     /*---------------------------
                                 PAGE ANCHORS
     ---------------------------*/
-    $('.mainNav a, .anchor').click(function() {
+    $('.mobile-menu a, .anchor').click(function() {
         $('html, body').animate({
-            scrollTop: $($(this).attr('href')).offset().top - 50
+            scrollTop: $( $(this).attr('href') ).offset().top - 50
         }, 800);
         return false;
     });
