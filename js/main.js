@@ -61,6 +61,7 @@ function parallaxScroll(evt) {
     }
 }
 
+
 function slideDurationTimeout(slideDuration) {
     setTimeout(function () {
         ticking = false;
@@ -165,7 +166,7 @@ jQuery(document).ready(function($) {
     $('.js-toggle-menu').on('click', function(event) {
         event.preventDefault();
         $(this).toggleClass('is-active');
-        $(this).siblings('header').toggleClass('open');
+        $('.mobile-menu').toggleClass('open');
     });
 
 
