@@ -164,7 +164,9 @@ body
 	  	justify-content: center  
 	  	
   	@media (max-width: 1200px)
-  		padding: 60px 0 
+  		padding: 60px 0
+  		&:first-of-type
+  			padding-top: 80px 
 
 
 /* Set stacking context of slides */
@@ -201,14 +203,9 @@ body
 	
 .content-wrapper 
   height: 100vh
-  -webkit-transform: translateY(30vh)
-  -ms-transform: translateY(30vh)
-  transform: translateY(30vh)
   will-change: transform
   -webkit-backface-visibility: hidden
   backface-visibility: hidden
-  -webkit-transition: all 1.8s cubic-bezier(0.22, 0.44, 0, 1)
-  transition: all 1.8s cubic-bezier(0.22, 0.44, 0, 1)
   padding-top: 70px 
   @media (max-width: 1200px)
   	transform: none !important
@@ -253,3 +250,37 @@ body
 .scroll-down
 	@media (max-width: 1200px)
 		display: none
+	
+
+@media (min-width: 1200px)
+	.fadeIn 
+		animation-duration: 2s
+		opacity: 0 
+
+	.fadeInUp 
+		animation-duration: 2s
+		opacity: 0
+		transform: translate3d(0, 50%, 0)
+		
+	.active.background,
+	.animated.background
+		.fadeIn
+			animation-name: fadeIn
+			animation-fill-mode: forwards
+		.fadeInUp
+			animation-name: fadeInUp
+			animation-fill-mode: forwards
+		
+	@keyframes fadeIn 
+		0% 
+			opacity: 0
+		100% 
+			opacity: 1
+			
+	@keyframes fadeInUp 
+		0% 
+			opacity: 0
+	    	transform: translate3d(0, 50%, 0)
+		100% 
+			opacity: 1
+			transform: none 

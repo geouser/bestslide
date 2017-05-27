@@ -71,26 +71,26 @@ window.addEventListener(mousewheelEvent, _.throttle(parallaxScroll, 60), false);
 
 function nextItem() {
     var $previousSlide = $('.background').eq(currentSlideNumber - 1);
-    $previousSlide.css('transform', 'translate3d(0,-100vh,0)').find('.content-wrapper').css('transform', 'translateY(-15vh)');
+    $previousSlide.css('transform', 'translate3d(0,-100vh,0)');
     currentSlideTransition();
 }
 function previousItem() {
     var $previousSlide = $('.background').eq(currentSlideNumber + 1);
-    $previousSlide.css('transform', 'translate3d(0,0vh,0)').find('.content-wrapper').css('transform', 'translateY(30vh)');
+    $previousSlide.css('transform', 'translate3d(0,0vh,0)');
     currentSlideTransition();
 }
 function currentSlideTransition() {
     var $currentSlide = $('.background').eq(currentSlideNumber);
-    $currentSlide.css('transform', 'translate3d(0,0vh,0)').find('.content-wrapper').css('transform', 'translateY(0vh)');
+    $currentSlide.css('transform', 'translate3d(0,0vh,0)');
 }
 
 function goTo(el) {
     var $nextSlide = $('.background').eq(el - 1);
 
-    $nextSlide.prevAll('.background').css('transform', 'translate3d(0,-100vh,0)').find('.content-wrapper').css('transform', 'translateY(-15vh)');
-    $nextSlide.nextAll('.background').css('transform', 'translate3d(0,30vh,0)').find('.content-wrapper').css('transform', 'translateY(30vh)');
+    $nextSlide.prevAll('.background').css('transform', 'translate3d(0,-100vh,0)');
+    $nextSlide.nextAll('.background').css('transform', 'translate3d(0,30vh,0)');
 
-    $nextSlide.css('transform', 'translate3d(0,0vh,0)').find('.content-wrapper').css('transform', 'translateY(0vh)');
+    $nextSlide.css('transform', 'translate3d(0,0vh,0)');
     currentSlideNumber = el - 1;
     activeSlide(currentSlideNumber);
 }
@@ -99,11 +99,20 @@ function goTo(el) {
 function activeSlide(num) {
     $('.slide-nav li, .background').removeClass('active');
     $('.slide-nav li').eq(num).addClass('active');
-    $('.background').eq(num).addClass('active');
+    $('.background').eq(num).addClass('active animated');
 }
 
 
 jQuery(document).ready(function($) {
+
+    $('.fadeIn, .fadeInUp').each(function(){
+        var delay = $(this).data('delay');
+        var time = $(this).data('time') || '.8s';
+        $(this).css({
+            'animation-delay':  delay,
+            'animation-duration':  time
+        });
+    });
 
     $('.slide-nav li').click(function(){
          goTo($(this).index() + 1);
