@@ -23,32 +23,91 @@ function exist(el){
 }
 
 
+var ticking = false;
+var isFirefox = /Firefox/i.test(navigator.userAgent);
+var isIe = /MSIE/i.test(navigator.userAgent) || /Trident.*rv\:11\./i.test(navigator.userAgent);
+var scrollSensitivitySetting = 30;
+var slideDurationSetting = 800;
+var currentSlideNumber = 0;
+var totalSlideNumber = $('.background').length;
+
+function parallaxScroll(evt) {
+    if (isFirefox) {
+        delta = evt.detail * -120;
+    } else if (isIe) {
+        delta = -evt.deltaY;
+    } else {
+        delta = evt.wheelDelta;
+    }
+    if (ticking != true) {
+        if (delta <= -scrollSensitivitySetting) {
+            ticking = true;
+            if (currentSlideNumber !== totalSlideNumber - 1) {
+                currentSlideNumber++;
+                nextItem();
+                activeSlide(currentSlideNumber);
+            }
+            slideDurationTimeout(slideDurationSetting);
+        }
+        if (delta >= scrollSensitivitySetting) {
+            ticking = true;
+            if (currentSlideNumber !== 0) {
+                currentSlideNumber--;
+            }
+            previousItem();
+            slideDurationTimeout(slideDurationSetting);
+            activeSlide(currentSlideNumber);
+        }
+    }
+}
+
+function slideDurationTimeout(slideDuration) {
+    setTimeout(function () {
+        ticking = false;
+    }, slideDuration);
+}
+var mousewheelEvent = isFirefox ? 'DOMMouseScroll' : 'wheel';
+window.addEventListener(mousewheelEvent, _.throttle(parallaxScroll, 60), false);
+
+function nextItem() {
+    var $previousSlide = $('.background').eq(currentSlideNumber - 1);
+    $previousSlide.css('transform', 'translate3d(0,-130vh,0)').find('.content-wrapper').css('transform', 'translateY(40vh)');
+    currentSlideTransition();
+}
+function previousItem() {
+    var $previousSlide = $('.background').eq(currentSlideNumber + 1);
+    $previousSlide.css('transform', 'translate3d(0,30vh,0)').find('.content-wrapper').css('transform', 'translateY(30vh)');
+    currentSlideTransition();
+}
+function currentSlideTransition() {
+    var $currentSlide = $('.background').eq(currentSlideNumber);
+    $currentSlide.css('transform', 'translate3d(0,-15vh,0)').find('.content-wrapper').css('transform', 'translateY(15vh)');
+}
+
+function goTo(el) {
+    var $nextSlide = $('.background').eq(el - 1);
+
+    $nextSlide.prevAll('.background').css('transform', 'translate3d(0,-130vh,0)').find('.content-wrapper').css('transform', 'translateY(40vh)');
+    $nextSlide.nextAll('.background').css('transform', 'translate3d(0,30vh,0)').find('.content-wrapper').css('transform', 'translateY(30vh)');
+
+    $nextSlide.css('transform', 'translate3d(0,-15vh,0)').find('.content-wrapper').css('transform', 'translateY(15vh)');
+    currentSlideNumber = el - 1;
+    activeSlide(currentSlideNumber);
+}
+
+
+function activeSlide(num) {
+    $('.slide-nav li, .background').removeClass('active');
+    $('.slide-nav li').eq(num).addClass('active');
+    $('.background').eq(num).addClass('active');
+}
+
+
 jQuery(document).ready(function($) {
 
-     /*---------------------------
-                                  Fullpage init
-    ---------------------------*/
-    $('#fullpage').fullpage({
-        menu: '#menu, #mobile-menu',
-        lockAnchors: false,
-        paddingTop: '0',
-        paddingBottom: '0',
-        fixedElements: '.header',
-        anchors: ['main-screen', 'moto', 'portfolio', 'what-you-get', 'pricing', 'action', 'clients', 'packages', 'contacts'],
-        responsiveWidth: 1200,
-        sectionSelector: '.fp-section',
-        slideSelector: '.fp-slide',
-        navigation: true,
-        navigationPosition: 'right',
+    $('.slide-nav li').click(function(){
+         goTo($(this).index() + 1);
     });
-
-    $('.scroll-down').on('click', function(event) {
-        event.preventDefault();
-        $.fn.fullpage.moveSectionDown();
-    });
-
-
-
 
     /*---------------------------
                                   ADD CLASS ON SCROLL

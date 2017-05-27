@@ -122,3 +122,107 @@ body
 
 .text-left
 	text-align: left
+	
+.fp-bg 
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    position: absolute;
+    z-index: -1;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    background-size: cover 
+    
+
+
+.background 
+  background-color: #FFF 
+  background-size: cover
+  background-repeat: no-repeat
+  background-position: center center
+  overflow: hidden
+  will-change: transform
+  -webkit-backface-visibility: hidden
+  backface-visibility: hidden
+  height: 130vh
+  position: fixed
+  width: 100%
+  -webkit-transform: translateY(20vh)
+  -ms-transform: translateY(20vh)
+  transform: translateY(20vh)
+  -webkit-transition: all 1.8s cubic-bezier(0.22, 0.44, 0, 1)
+  transition: all 1.8s cubic-bezier(0.22, 0.44, 0, 1)
+
+
+.background:first-child 
+  -webkit-transform: translateY(-10vh)
+  -ms-transform: translateY(-10vh)
+  transform: translateY(-10vh)
+
+.background:first-child .content-wrapper 
+  -webkit-transform: translateY(10vh)
+  -ms-transform: translateY(10vh)
+  transform: translateY(10vh)
+
+/* Set stacking context of slides */
+
+.background:nth-child(1)  
+	z-index: 20
+
+.background:nth-child(2)  
+	z-index: 19
+
+.background:nth-child(3)  
+	z-index: 18
+	
+.background:nth-child(4)  
+	z-index: 17 
+.background:nth-child(5)  
+	z-index: 16 
+.background:nth-child(6)  
+	z-index: 15 
+.background:nth-child(7)  
+	z-index: 14 
+.background:nth-child(8)  
+	z-index: 13 
+.background:nth-child(9)  
+	z-index: 12 
+.background:nth-child(10)  
+	z-index: 11 
+.background:nth-child(11)  
+	z-index: 10 
+.background:nth-child(12)  
+	z-index: 9 
+.background:nth-child(13)  
+	z-index: 10 
+	
+.content-wrapper 
+  height: 100vh
+  -webkit-transform: translateY(40vh)
+  -ms-transform: translateY(40vh)
+  transform: translateY(40vh)
+  will-change: transform
+  -webkit-backface-visibility: hidden
+  backface-visibility: hidden
+  -webkit-transition: all 1.9s cubic-bezier(0.22, 0.44, 0, 1)
+  transition: all 1.9s cubic-bezier(0.22, 0.44, 0, 1)
+  
+
+.slide-nav
+	position: fixed
+	z-index: 100 
+	right: 40px
+	list-style-type: none
+	transform: translateY(-50%) 
+	top: 50%
+	li 
+		display: block
+		margin: 20px auto 
+		width: 15px
+		cursor: pointer
+		height: 15px
+		border-radius: 50%
+		transition: all .2s 
+		background-color: #8a88a0
+		&.active 
+			background-color: #fff     
