@@ -139,29 +139,32 @@ body
 		height: 100% 
 
 .background 
-  background-color: #FFF 
-  background-size: cover
-  background-repeat: no-repeat
-  background-position: center center
-  overflow: hidden
-  will-change: transform
-  -webkit-backface-visibility: hidden
-  backface-visibility: hidden
-  height: 100vh
-  position: fixed
-  width: 100%
-  -webkit-transition: all 1.4s cubic-bezier(0.22, 0.44, 0, 1)
-  transition: all 1.4s cubic-bezier(0.22, 0.44, 0, 1)
-  @media (max-width: 1200px)
-  	position: static
-  	height: auto 
-  	transform: none !important  
-  	min-height: 100%
-  	padding: 100px 0  
-  	display: flex
-  	flex-direction: column
-  	align-items: center
-  	justify-content: center  
+  	background-color: #FFF 
+  	background-size: cover
+  	background-repeat: no-repeat
+  	background-position: center center
+  	overflow: hidden
+  	will-change: transform
+  	-webkit-backface-visibility: hidden
+  	backface-visibility: hidden
+  	height: 100vh
+  	position: fixed
+ 	 width: 100%
+  	-webkit-transition: all 1.4s cubic-bezier(0.22, 0.44, 0, 1)
+  	transition: all 1.4s cubic-bezier(0.22, 0.44, 0, 1)
+  	@media (max-width: 1200px)
+	  	position: static
+	  	height: auto 
+	  	transform: none !important  
+	  	min-height: 100%
+	  	padding: 100px 0  
+	  	display: flex
+	  	flex-direction: column
+	  	align-items: center
+	  	justify-content: center  
+	  	
+  	@media (max-width: 1200px)
+  		padding: 60px 0 
 
 
 /* Set stacking context of slides */
@@ -204,16 +207,15 @@ body
   will-change: transform
   -webkit-backface-visibility: hidden
   backface-visibility: hidden
-  -webkit-transition: all 1.6s cubic-bezier(0.22, 0.44, 0, 1)
-  transition: all 1.6s cubic-bezier(0.22, 0.44, 0, 1)
+  -webkit-transition: all 1.8s cubic-bezier(0.22, 0.44, 0, 1)
+  transition: all 1.8s cubic-bezier(0.22, 0.44, 0, 1)
   padding-top: 70px 
   @media (max-width: 1200px)
   	transform: none !important
   	height: 100% 
   	display: block
   	width: 100% 
-  @media (max-width: 600px)
-  	padding-top: 60px 
+  	padding-top: 0 
   
 .background:first-of-type .content-wrapper 
   -webkit-transform: translateY(0vh)
