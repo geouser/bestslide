@@ -29,7 +29,7 @@ jQuery(document).ready(function($) {
                                   Fullpage init
     ---------------------------*/
     $('#fullpage').fullpage({
-        menu: '#menu',
+        menu: '#menu, #mobile-menu',
         lockAnchors: false,
         paddingTop: '0',
         paddingBottom: '0',
@@ -104,7 +104,7 @@ jQuery(document).ready(function($) {
     $('.js-toggle-menu').on('click', function(event) {
         event.preventDefault();
         $(this).toggleClass('is-active');
-        $(this).siblings('header').toggleClass('open');
+        $('.mobile-menu').toggleClass('open');
     });
 
 
