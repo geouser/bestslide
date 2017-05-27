@@ -42,7 +42,10 @@ jQuery(document).ready(function($) {
         navigationPosition: 'right',
     });
 
-
+    $('.scroll-down').on('click', function(event) {
+        event.preventDefault();
+        $.fn.fullpage.moveSectionDown();
+    });
 
 
 
