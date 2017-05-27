@@ -212,15 +212,18 @@ body
   padding-top: 70px 
   @media (max-width: 1200px)
   	transform: none !important
-  	height: 100% 
+  	min-height: 100% 
   	display: block
   	width: 100% 
   	padding-top: 0 
+  	height: auto 
   
 .background:first-of-type .content-wrapper 
   -webkit-transform: translateY(0vh)
   -ms-transform: translateY(0vh)
   transform: translateY(0vh)
+  @media (max-width: 1200px)
+  	transform: none !important
   
 .content-wrapper
 	&.row
@@ -246,3 +249,7 @@ body
 		background-color: #8a88a0
 		&.active 
 			background-color: #fff     
+
+.scroll-down
+	@media (max-width: 1200px)
+		display: none
