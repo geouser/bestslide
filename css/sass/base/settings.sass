@@ -134,6 +134,9 @@ body
     background-size: cover 
     
 
+.container
+	@media (max-width: 1200px)
+		height: 100% 
 
 .background 
   background-color: #FFF 
@@ -152,6 +155,17 @@ body
   transform: translateY(20vh)
   -webkit-transition: all 1.8s cubic-bezier(0.22, 0.44, 0, 1)
   transition: all 1.8s cubic-bezier(0.22, 0.44, 0, 1)
+  @media (max-width: 1200px)
+  	position: static
+  	height: auto 
+  	transform: none !important  
+  	min-height: 100%
+  	padding: 100px 0  
+  	display: flex
+  	flex-direction: column
+  	align-items: center
+  	justify-content: center  
+
 
 
 .background:first-child 
@@ -206,7 +220,15 @@ body
   backface-visibility: hidden
   -webkit-transition: all 1.9s cubic-bezier(0.22, 0.44, 0, 1)
   transition: all 1.9s cubic-bezier(0.22, 0.44, 0, 1)
+  @media (max-width: 1200px)
+  	transform: none !important
+  	height: 100% 
+  	display: block
+  	width: 100% 
   
+.content-wrapper
+	&.row
+		margin: 0 auto 
 
 .slide-nav
 	position: fixed
@@ -215,6 +237,8 @@ body
 	list-style-type: none
 	transform: translateY(-50%) 
 	top: 50%
+	@media (max-width: 1200px)
+	 	display: none
 	li 
 		display: block
 		margin: 20px auto 
