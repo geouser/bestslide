@@ -71,26 +71,26 @@ window.addEventListener(mousewheelEvent, _.throttle(parallaxScroll, 60), false);
 
 function nextItem() {
     var $previousSlide = $('.background').eq(currentSlideNumber - 1);
-    $previousSlide.css('transform', 'translate3d(0,-130vh,0)').find('.content-wrapper').css('transform', 'translateY(40vh)');
+    $previousSlide.css('transform', 'translate3d(0,-100vh,0)').find('.content-wrapper').css('transform', 'translateY(-15vh)');
     currentSlideTransition();
 }
 function previousItem() {
     var $previousSlide = $('.background').eq(currentSlideNumber + 1);
-    $previousSlide.css('transform', 'translate3d(0,30vh,0)').find('.content-wrapper').css('transform', 'translateY(30vh)');
+    $previousSlide.css('transform', 'translate3d(0,0vh,0)').find('.content-wrapper').css('transform', 'translateY(30vh)');
     currentSlideTransition();
 }
 function currentSlideTransition() {
     var $currentSlide = $('.background').eq(currentSlideNumber);
-    $currentSlide.css('transform', 'translate3d(0,-15vh,0)').find('.content-wrapper').css('transform', 'translateY(15vh)');
+    $currentSlide.css('transform', 'translate3d(0,0vh,0)').find('.content-wrapper').css('transform', 'translateY(0vh)');
 }
 
 function goTo(el) {
     var $nextSlide = $('.background').eq(el - 1);
 
-    $nextSlide.prevAll('.background').css('transform', 'translate3d(0,-130vh,0)').find('.content-wrapper').css('transform', 'translateY(40vh)');
-    $nextSlide.nextAll('.background').css('transform', 'translate3d(0,30vh,0)').find('.content-wrapper').css('transform', 'translateY(30vh)');
+    $nextSlide.prevAll('.background').css('transform', 'translate3d(0,-100vh,0)').find('.content-wrapper').css('transform', 'translateY(30vh)');
+    $nextSlide.nextAll('.background').css('transform', 'translate3d(0,30vh,0)').find('.content-wrapper').css('transform', 'translateY(-15vh)');
 
-    $nextSlide.css('transform', 'translate3d(0,-15vh,0)').find('.content-wrapper').css('transform', 'translateY(15vh)');
+    $nextSlide.css('transform', 'translate3d(0,0vh,0)').find('.content-wrapper').css('transform', 'translateY(0vh)');
     currentSlideNumber = el - 1;
     activeSlide(currentSlideNumber);
 }
